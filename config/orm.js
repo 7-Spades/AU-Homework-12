@@ -1,9 +1,9 @@
 const connection = require("./connection.js");
 
 const orm = {
-    all: function(devoured,table, cb){
-        let queryString = "SELECT ?? FROM ??";
-        connection.query(queryString,[devoured, table], function(err, res){
+    all: function(table, cb){
+        let queryString = "SELECT * FROM ??";
+        connection.query(queryString, [table], function(err, res){
             if(err) throw err;
             cb(res);
         });
