@@ -11,7 +11,7 @@ const orm = {
     create: function(table, name, devoured, rname, rdevoured,cb){
         let queryString = "INSERT INTO ?? (??, ??) VALUES (??, ??)"
         console.log(queryString);
-        connection.query(queryString, [table, name, devoured, rname, rdevoured], function(err, res){
+        connection.query(queryString, [rname, rdevoured], function(err, res){
             if(err) throw err;
             cb(res);
         });
