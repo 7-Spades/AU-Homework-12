@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6 mb-4">
+            <img class="justify-content-center mb-2" src="" alt="no image">
+                <h2 class="text-center mb-2">Eat-da-Burger</h2>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="burgeName" aria-label="burgerName" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Make-A-Burger</button>
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+    <div class="jumbotron">
+        
+
+        {{#if devoured}}
+
+        <h4 class="text-center">Burgers Eaten So Far...</h4>
+        <ul>
+            {{#each burger}}
+            {{#unless devoured}}
+            {{> burger/eaten-block}}
+            {{/unless}}
+            {{/each}}
+        </ul>
+        <hr>
+
+        {{else}}
+
+        <h4 class="text-center">Eat a burger!</h4>
+        <ul>
+            {{#each burger}}
+            {{#unless devoured}}
+            {{> burger/burger-block}}
+            {{/unless}}
+            {{/each}}
+        </ul>
+
+        {{/if}}
+
+    </div>
+        </div>
+    </div>
+</div>
