@@ -8,10 +8,10 @@ const orm = {
             cb(res);
         });
     },
-    create: function(table, name, devoured, rname, rdevoured,cb){
-        let queryString = "INSERT INTO ?? (??, ??) VALUES (??, ??)"
+    create: function(table, val, name, cb){
+        let queryString = "INSERT INTO ?? (??) VALUES (??)"
         console.log(queryString);
-        connection.query(queryString, [table, name, devoured, rname, rdevoured], function(err, res){
+        connection.query(queryString, [table, val, name], function(err, res){
             if(err) throw err;
             cb(res);
         });
